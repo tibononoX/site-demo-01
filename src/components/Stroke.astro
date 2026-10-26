@@ -9,4 +9,4 @@ const ws = (variant === 'small' ? [320, 640, 960] : [600, 1000, 1500, 2000, 2560
 const set = await Promise.all(ws.map((w) => getImage({ src: img, width: w, format: 'webp', quality: 82 })));
 const srcset = [...set.map((s, i) => `${s.src} ${ws[i]}w`), `${img.src} ${img.width}w`].join(', ');
 ---
-<img class={cls} src={set[1]?.src ?? img.src} srcset={srcset} sizes={sizes} width={img.width} height={img.height} alt="" aria-hidden="true" loading={eager ? 'eager' : 'lazy'} decoding="async">
+<img class={cls} src={set[1]?.src ?? img.src} srcset={srcset} sizes={sizes} width={img.width} height={img.height} alt="" aria-hidden="true" loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'low' : undefined} decoding="async">
