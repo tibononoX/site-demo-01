@@ -1,8 +1,12 @@
 ---
 // Dry-brush stroke (CC0 texture, variant B) — decorative only.
+import { getImage } from 'astro:assets';
 import big from '../assets/img/b-hero.webp';
 import small from '../assets/img/b-small.webp';
-const { variant = 'big', class: cls = '' } = Astro.props;
+const { variant = 'big', class: cls = '', sizes = '(min-width:1024px) 900px, 460px' } = Astro.props;
 const img = variant === 'small' ? small : big;
+const ws = [480, 960, 1440].filter((w) => w < img.width);
+const set = await Promise.all(ws.map((w) => getImage({ src: img, width: w, format: 'webp', quality: 80 })));
+const srcset = [...set.map((s, i) => `${s.src} ${ws[i]}w`), `${img.src} ${img.width}w`].join(', ');
 ---
-<img class={cls} src={img.src} width={img.width} height={img.height} alt="" aria-hidden="true" loading="lazy" decoding="async">
+<img class={cls} src={set[0]?.src ?? img.src} srcset={srcset} sizes={sizes} width={img.width} height={img.height} alt="" aria-hidden="true" loading="lazy" decoding="async">

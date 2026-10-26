@@ -168,3 +168,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 6px}footer nav a{
 @media(min-width:1024px){.mnav{display:none}}
 footer p.i{margin:0}
 @media(min-width:1024px){.intro .st{width:860px;right:-380px;bottom:-40px}}
+/* audit fixes */
+.c6,.c6 .t{background:#5E7A1A}
+.pola div{color:var(--ink)!important}
+img.pst,img.st{height:auto}
