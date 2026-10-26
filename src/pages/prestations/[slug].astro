@@ -1,0 +1,7 @@
+---
+import Placeholder from '../../components/Placeholder.astro';
+import { TRADES } from '../../data';
+export function getStaticPaths() { return TRADES.map((t) => ({ params: { slug: t.slug }, props: { t } })); }
+const { t } = Astro.props;
+---
+<Placeholder title={t.t} h1={t.t} crumbs={[['prestations/', 'Prestations']]} note={`${t.d} Texte détaillé à reprendre du site actuel.`} />

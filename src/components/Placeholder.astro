@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { u, TEL, TEL_TXT } from '../lib';
+const { title, h1, note, crumbs = [], items = [] } = Astro.props;
+---
+<Base title={`${title} — FV Peinture`} description={`${h1} — page en préparation.`}>
+<section class="wrap dark intro" aria-labelledby="h1">
+  <nav aria-label="Fil d’Ariane" class="small" style="font-size:14px"><a href={u('')}>Accueil</a>{crumbs.map(([h, t]) => <> / <a href={u(h)}>{t}</a></>)} / {h1}</nav>
+  <div class="ph-page"><h1 class="h" id="h1">{h1}</h1>
+  <p><span class="tag">À CONFIRMER</span> {note}</p>
+  {items.length > 0 && <ul style="color:var(--pale)">{items.map((i) => <li>{i} <span class="tag">À CONFIRMER</span></li>)}</ul>}
+  <div class="row" style="margin-top:16px"><a class="btn btn-g" href={TEL}>Appeler le {TEL_TXT}</a><a class="btn btn-o" href={u('')}>Retour à l’accueil</a></div></div>
+</section>
+</Base>
