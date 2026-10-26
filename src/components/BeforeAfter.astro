@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import slider from '../assets/img/slider.jpg';
+import { u } from '../lib';
+---
+<section class="wrap real" id="realisations" aria-labelledby="h-real">
+  <div class="real-top"><h2 class="h" id="h-real">Avant / après.</h2>
+    <div class="polas">
+      {[1,2,3].map(n => <div class="pola"><div>PLACEHOLDER</div>Chantier FV #{n}</div>)}
+      <div style="display:grid;gap:6px;font-size:15px"><b>Photos de chantiers à venir</b><span><span class="tag">À CONFIRMER</span></span><a href={u('realisations/')} style="color:var(--dg);font-weight:600">Voir les réalisations →</a></div>
+    </div>
+  </div>
+  <div class="ba">
+    <Image class="before" src={slider} widths={[640,1280]} sizes="(min-width:1024px) 1248px, 100vw" alt="Avant (illustration)" loading="lazy" format="webp" quality={65} />
+    <Image class="after" src={slider} widths={[640,1280]} sizes="(min-width:1024px) 1248px, 100vw" alt="Après (illustration)" loading="lazy" format="webp" quality={65} />
+    <div class="tint"></div><div class="line"></div><div class="knob" aria-hidden="true">‹ ›</div>
+    <span class="lab a">AVANT</span><span class="lab b">APRÈS</span>
+    <span class="credit">ILLUSTRATION — photo d’ambiance Unsplash / Ernys, pas une réalisation FV Peinture</span>
+    <label class="sr-only" for="ba-range">Comparer avant et après</label>
+    <input id="ba-range" type="range" min="0" max="100" value="50">
+  </div>
+</section>
+<script>
+  document.querySelectorAll<HTMLInputElement>('.ba input').forEach((r) =>
+    r.addEventListener('input', () => (r.parentElement as HTMLElement).style.setProperty('--p', r.value + '%')));
+</script>
