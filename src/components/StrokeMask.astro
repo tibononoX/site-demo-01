@@ -1,4 +1,6 @@
 ---
+import { getImage } from 'astro:assets';
 import big from '../assets/img/b-hero.webp';
+const m = await getImage({ src: big, width: 960, format: 'webp', quality: 70 });
 ---
-<div class="bgm" aria-hidden="true" style={`-webkit-mask-image:url(${big.src});mask-image:url(${big.src})`}></div>
+<div class="bgm" aria-hidden="true" style={`-webkit-mask-image:url(${m.src});mask-image:url(${m.src})`}></div>

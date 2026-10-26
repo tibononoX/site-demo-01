@@ -47,7 +47,7 @@ a{color:inherit}
 .chip .t .h{font-size:19px;line-height:1}
 .chip .n{font:600 11px Inter;letter-spacing:.1em}
 .chip .b{padding:10px 14px 12px;font-size:14px}.chip .b small{display:none;color:var(--mut)}.chip .b strong{color:var(--dg)}
-.c1 .t{background:var(--g)}.c2 .t{background:var(--dg);color:var(--w)}.c3 .t{background:#E9E3D3}.c4 .t{background:var(--ink);color:var(--w)}.c5 .t{background:#D3DFA0}.c6 .t{background:#6E8A22;color:#fff}
+.c1 .t{background:var(--g)}.c2 .t{background:var(--dg);color:var(--w)}.c3 .t{background:#E9E3D3}.c4 .t{background:var(--ink);color:var(--w)}.c5 .t{background:#D3DFA0}.c6 .t{background:#5E7A1A;color:#fff}
 .chips .chip:nth-child(1){transform:rotate(-2deg)}.chips .chip:nth-child(2){transform:rotate(1.5deg)}.chips .chip:nth-child(3){transform:rotate(-1deg)}.chips .chip:nth-child(4){transform:rotate(2deg)}.chips .chip:nth-child(5){transform:rotate(-1.5deg)}.chips .chip:nth-child(6){transform:rotate(1deg)}
 /* pourquoi */
 .dark{background:var(--ink);color:var(--w)}.deep{background:var(--dg);color:var(--w)}.green{background:var(--g)}
@@ -132,7 +132,7 @@ h2.h{font-size:44px}
 .trade{display:grid;gap:28px;padding:48px 0;border-top:1px solid #DCD5C4;align-items:center}.trade:first-child{border:0}
 .sw{width:220px;height:260px;padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 36px #0000002e}
 .sw .h{font-size:110px;line-height:.8}.sw .n{font:600 13px Inter;letter-spacing:.1em}
-.sw.c1{background:var(--g)}.sw.c2{background:var(--dg);color:var(--w)}.sw.c3{background:#E9E3D3}.sw.c5{background:#D3DFA0}.sw.c6{background:#6E8A22;color:#fff}
+.sw.c1{background:var(--g)}.sw.c2{background:var(--dg);color:var(--w)}.sw.c3{background:#E9E3D3}.sw.c5{background:#D3DFA0}.sw.c6{background:#5E7A1A;color:#fff}
 .tx{display:grid;gap:14px}.tx h2{font-size:44px}.lead{font-size:20px;color:var(--mut)}
 .pola.big div{width:200px;height:150px;font-size:12px}
 @media (min-width:1024px){.trade{grid-template-columns:300px 1fr 230px;gap:64px;padding:56px 0}.trade.rev{grid-template-columns:230px 1fr 300px}.trade.rev .sw{order:3}.trade.rev .pola{order:1}.trade.rev .tx{order:2}.sw{width:300px;height:360px;padding:24px 28px}.sw .h{font-size:140px}.tx h2{font-size:60px}.intro{padding-top:96px;padding-bottom:110px}.intro .st{right:-200px;top:170px}}
@@ -172,3 +172,6 @@ footer p.i{margin:0}
 .c6,.c6 .t{background:#5E7A1A}
 .pola div{color:var(--ink)!important}
 img.pst,img.st{height:auto}
+.c6 small,.c6 strong,.c6 .n{color:#fff}
+.map div{color:var(--ink)}
+.chip.c6 .b small,.chip.c6 .b strong{color:#fff!important}

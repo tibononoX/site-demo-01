@@ -9,6 +9,6 @@ const { title, h1, note, crumbs = [], items = [] } = Astro.props;
   <div class="ph-page"><h1 class="h" id="h1">{h1}</h1>
   <p><span class="tag">À CONFIRMER</span> {note}</p>
   {items.length > 0 && <ul style="color:var(--pale)">{items.map((i) => <li>{i} <span class="tag">À CONFIRMER</span></li>)}</ul>}
-  <div class="row" style="margin-top:16px"><a class="btn btn-g" href={TEL}>Appeler le {TEL_TXT}</a><a class="btn btn-o" href={u('')}>Retour à l’accueil</a></div></div>
+  <div class="row" style="margin-top:16px"><a class="btn btn-g" href={TEL}>{'Appeler\u00a0le\u00a0'}{TEL_TXT}</a><a class="btn btn-o" href={u('')}>Retour à l’accueil</a></div></div>
 </section>
 </Base>
