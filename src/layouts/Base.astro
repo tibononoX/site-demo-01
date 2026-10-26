@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import '../styles/motion.css';
+import Motion from '../components/Motion.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
@@ -25,5 +27,6 @@ const { title, description, current } = Astro.props;
 <main id="contenu"><slot /></main>
 <Footer />
 <MobileBar />
+<Motion />
 </body>
 </html>

@@ -1,0 +1,23 @@
+<script>
+  // Tiny motion layer: scroll reveal + stroke paint-in + header shrink. No-op with reduced motion.
+  const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!rm && 'IntersectionObserver' in window) {
+    const d = document.documentElement; d.classList.add('js');
+    const groups = ['.chips > li > .chip', '.eng > div', '.polas > *', '.trades > .trade', '.pp > *', '.trust > *', '.ct > *'];
+    groups.forEach((sel) => document.querySelectorAll(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); (el as HTMLElement).style.setProperty('--i', String(i % 6)); }));
+    document.querySelectorAll('main section:not(.hero):not(.intro) > h2, .prest > div:first-child, .avis > *, .cta > p, .cta > .row, .ba, .real-top > h2, .ph-page').forEach((el) => el.setAttribute('data-rv', ''));
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const t = e.target as HTMLElement;
+      t.classList.add('in');
+      // strokes are clipped (invisible to IO), so their container triggers them
+      t.querySelectorAll(':scope > .pst, :scope > .st, :scope > .bgm').forEach((s) => s.classList.add('in'));
+      io.unobserve(t);
+    }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    document.querySelectorAll('[data-rv]').forEach((el) => io.observe(el));
+    new Set([...document.querySelectorAll('.pst, .intro .st, .bgm')].map((s) => s.parentElement)).forEach((p) => p && io.observe(p));
+    const hd = document.querySelector('.hd');
+    let t = false;
+    addEventListener('scroll', () => { if (t) return; t = true; requestAnimationFrame(() => { hd?.classList.toggle('sm', scrollY > 40); t = false; }); }, { passive: true });
+  }
+</script>

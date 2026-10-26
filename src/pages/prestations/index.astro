@@ -6,17 +6,17 @@ import { TRADES } from '../../data';
 import { u, TEL, TEL_TXT } from '../../lib';
 ---
 <Base title="Prestations — FV Peinture, Genève" description="Peinture intérieure et extérieure, façades, plâtrerie, cloisons, sols résine et carrelage, film solaire UV à Genève." current="prestations/">
-<section class="wrap dark intro" aria-labelledby="h1"><Stroke class="st" eager sizes="(min-width:1024px) 860px, 460px" /><nav aria-label="Fil d’Ariane" class="small" style="font-size:14px"><a href={u('')}>Accueil</a> / Prestations</nav><h1 class="h" id="h1"><span>Le nuancier</span><span class="i">des prestations.</span></h1><p style="color:var(--pale);font-size:20px;max-width:640px">Le savoir-faire en couleur — peinture, plâtre, cloisons, sols, façades.</p><div class="row" style="margin-top:8px"><a class="btn btn-g" href={u('devis/')}>Devis gratuit →</a><a class="btn btn-o" href={TEL}>{TEL_TXT}</a></div></section>
+<section class="wrap dark intro" aria-labelledby="h1"><Stroke class="st" eager sizes="(min-width:1024px) 860px, 460px" /><nav aria-label="Fil d’Ariane" class="small" style="font-size:14px"><a href={u('')}>Accueil</a> / Prestations</nav><h1 class="h" id="h1"><span>Le nuancier</span><span class="i">des prestations.</span></h1><p style="color:var(--pale);font-size:20px;max-width:640px">Le savoir-faire en couleur — peinture, plâtre, cloisons, sols, façades.</p><div class="row" style="margin-top:8px"><a class="btn btn-g" href={u('devis/')}>Devis gratuit <span class="ar" aria-hidden="true"><span class="ar" aria-hidden="true">→</span></span></a><a class="btn btn-o" href={TEL}>{TEL_TXT}</a></div></section>
 <div class="trust"><span class="note"><span class="stars sm" aria-hidden="true">★★★★★</span> <b>5,0</b> sur Google</span><span class="pt">Genève &amp; arc lémanique · Un seul interlocuteur · Particuliers et professionnels</span></div>
 <section class="wrap trades">
 {TRADES.map((t, i) => (
   <article class={`trade${i % 2 ? ' rev' : ''}`}>
     <div class={`sw ${t.c}`} style={`transform:rotate(${i % 2 ? 2 : -2}deg)`} aria-hidden="true"><span class="n">FV-0{i + 1}</span><span class="h">0{i + 1}</span></div>
     <div class="tx"><h2 class="h">{t.t}</h2><p class="lead">{t.d}</p><p class="row" style="color:var(--mut);font-size:14px">Texte détaillé à reprendre du site actuel <span class="tag">À CONFIRMER</span></p>
-      <div class="row"><a class="btn btn-ink" href={u('devis/')}>Devis gratuit →</a><a class="btn btn-o" href={u(`prestations/${t.slug}/`)}>Voir la page<span class="sr-only"> {t.t}</span></a></div></div>
+      <div class="row"><a class="btn btn-ink" href={u('devis/')}>Devis gratuit <span class="ar" aria-hidden="true"><span class="ar" aria-hidden="true">→</span></span></a><a class="btn btn-o" href={u(`prestations/${t.slug}/`)}>Voir la page<span class="sr-only"> {t.t}</span></a></div></div>
     <div class="pola big" style={`transform:rotate(${i % 2 ? -3 : 3}deg)`}><div>PLACEHOLDER</div>Photo chantier à fournir</div>
   </article>))}
 </section>
 <section class="wrap deep cta" aria-label="Demande de devis"><StrokeMask /><p class="h" style="color:var(--w);margin:0">Parlez-nous</p><p class="h i" style="color:var(--g);margin:0">de votre projet.</p>
-<div class="row"><a class="btn btn-g" href={u('devis/')}>Devis gratuit →</a><a class="btn btn-o" style="color:var(--w)" href={TEL}>{TEL_TXT}</a><span class="tag dark">GRATUITÉ À CONFIRMER</span></div></section>
+<div class="row"><a class="btn btn-g" href={u('devis/')}>Devis gratuit <span class="ar" aria-hidden="true"><span class="ar" aria-hidden="true">→</span></span></a><a class="btn btn-o" style="color:var(--w)" href={TEL}>{TEL_TXT}</a><span class="tag dark">GRATUITÉ À CONFIRMER</span></div></section>
 </Base>
