@@ -1,0 +1,10 @@
+---
+import { SERVICES } from '../data';
+import { u } from '../lib';
+---
+<section class="wrap prest" aria-labelledby="h-prest">
+  <div><span class="ey" style="color:var(--dg)">Le nuancier FV</span><h2 class="h" id="h-prest" style="margin:16px 0">Ce que nous peignons.</h2><p style="color:var(--mut);margin-bottom:24px">Six savoir-faire, une seule équipe. Choisissez votre teinte, on s’occupe du reste.</p><a class="btn" style="background:var(--ink);color:var(--w)" href={u('prestations/')}>Toutes les prestations</a></div>
+  <ul class="chips" role="list">
+    {SERVICES.map((s, i) => <li style="list-style:none;display:contents"><a class={`chip ${s.c}`} href={u('prestations/')}><div class="t"><span class="n">FV-0{i + 1}</span><span class="h">{s.t}</span></div><div class="b"><small>{s.s}</small><strong>Découvrir <span class="sr-only">{s.t}</span>→</strong></div></a></li>)}
+  </ul>
+</section>
