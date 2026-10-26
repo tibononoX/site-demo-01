@@ -1,12 +1,12 @@
 ---
-// Dry-brush stroke (CC0 texture, variant B) — decorative only.
+// HD dry-brush stroke (CC0 silhouette + CC0 texture, see CREDITS.md) — decorative only.
 import { getImage } from 'astro:assets';
-import big from '../assets/img/b-hero.webp';
-import small from '../assets/img/b-small.webp';
-const { variant = 'big', class: cls = '', sizes = '(min-width:1024px) 900px, 460px' } = Astro.props;
+import big from '../assets/img/stroke-hero.webp';
+import small from '../assets/img/stroke-small.webp';
+const { variant = 'big', class: cls = '', sizes = '(min-width:1024px) 1000px, 600px', eager = false } = Astro.props;
 const img = variant === 'small' ? small : big;
-const ws = [300, 480, 640, 960, 1440].filter((w) => w < img.width);
-const set = await Promise.all(ws.map((w) => getImage({ src: img, width: w, format: 'webp', quality: 80 })));
+const ws = (variant === 'small' ? [320, 640, 960] : [600, 1000, 1500, 2000, 2560]).filter((w) => w < img.width);
+const set = await Promise.all(ws.map((w) => getImage({ src: img, width: w, format: 'webp', quality: 82 })));
 const srcset = [...set.map((s, i) => `${s.src} ${ws[i]}w`), `${img.src} ${img.width}w`].join(', ');
 ---
-<img class={cls} src={set[0]?.src ?? img.src} srcset={srcset} sizes={sizes} width={img.width} height={img.height} alt="" aria-hidden="true" loading="lazy" decoding="async">
+<img class={cls} src={set[1]?.src ?? img.src} srcset={srcset} sizes={sizes} width={img.width} height={img.height} alt="" aria-hidden="true" loading={eager ? 'eager' : 'lazy'} decoding="async">

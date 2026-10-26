@@ -15,7 +15,7 @@ const m1 = await getImage({ src: heroM, width: 390, format: 'webp', quality: 65 
       <source media="(min-width:1024px)" srcset={`${d1.src} 740w, ${d.src} 1480w`} sizes="740px">
       <img class="ph" src={m1.src} srcset={`${m1.src} 390w, ${m.src} 780w`} sizes="100vw" alt="Peintre au travail sur un échafaudage (photo d’ambiance)" width="390" height="440" fetchpriority="high">
     </picture>
-    <Stroke class="pst p1" sizes="(min-width:1024px) 1000px, 600px" /><Stroke class="pst p2" variant="small" sizes="(min-width:1024px) 420px, 300px" />
+    <Stroke class="pst p1" eager sizes="(min-width:1024px) 1000px, 600px" /><Stroke class="pst p2" variant="small" eager sizes="(min-width:1024px) 420px, 300px" />
     <span class="credit">Photo d’ambiance — Unsplash / Ernys · pas un chantier FV</span>
   </div>
   <div class="hero-txt">
