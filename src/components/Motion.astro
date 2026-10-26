@@ -5,7 +5,7 @@
     const d = document.documentElement; d.classList.add('js');
     const groups = ['.chips > li > .chip', '.eng > div', '.polas > *', '.trades > .trade', '.pp > *', '.trust > *', '.ct > *'];
     groups.forEach((sel) => document.querySelectorAll(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); (el as HTMLElement).style.setProperty('--i', String(i % 6)); }));
-    document.querySelectorAll('main section:not(.hero):not(.intro) > h2, .prest > div:first-child, .avis > *, .cta > p, .cta > .row, .ba, .real-top > h2, .ph-page').forEach((el) => el.setAttribute('data-rv', ''));
+    document.querySelectorAll('main section:not(.hero):not(.intro) > h2, .prest > div:first-child, .avis > *, .cta > p, .cta > .row, .ba, .real-top > h2').forEach((el) => el.setAttribute('data-rv', ''));
     const io = new IntersectionObserver((es) => es.forEach((e) => {
       if (!e.isIntersecting) return;
       const t = e.target as HTMLElement;

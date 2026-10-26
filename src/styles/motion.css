@@ -30,12 +30,12 @@
 .js .pst.in,.js .intro .st.in,.js .bgm.in{clip-path:inset(0 0 0 0)}
 .js .pst.p2{transition-delay:.45s}
 /* Hero headline entrance */
-.hero h1 span,.intro h1 span{animation:rise .8s var(--ease) both}
+.hero h1 span,.intro h1 span{animation:rise .8s var(--ease) both;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 span:nth-child(2),.intro h1 span:nth-child(2){animation-delay:.12s}
 .hero h1 span:nth-child(3){animation-delay:.24s}
 .hero .ey,.hero-txt>p,.hero .ctas,.hero-txt>.row{animation:rise .7s var(--ease) both;animation-delay:.36s}
 .hero .ctas{animation-delay:.46s}
-@keyframes rise{from{opacity:0;translate:0 .4em}to{opacity:1;translate:0 0}}
+@keyframes rise{from{clip-path:inset(0 0 100% 0);translate:0 .35em}to{clip-path:inset(0 0 -20% 0);translate:0 0}}
 /* Before/after handle */
 .ba .knob{transition:scale .25s var(--ease),box-shadow .25s}
 .ba:hover .knob{scale:1.08;box-shadow:0 10px 24px #00000059}
