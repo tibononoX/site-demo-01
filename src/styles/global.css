@@ -167,3 +167,4 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 6px}footer nav a{
 .mnav nav{position:absolute;right:0;top:52px;background:var(--ink);border:1px solid #3A4235;padding:12px;display:grid;gap:4px;min-width:200px;z-index:40}.mnav nav a{padding:10px 8px;text-decoration:none;font-weight:600}
 @media(min-width:1024px){.mnav{display:none}}
 footer p.i{margin:0}
+@media(min-width:1024px){.intro .st{width:860px;right:-380px;bottom:-40px}}
