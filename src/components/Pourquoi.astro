@@ -1,0 +1,7 @@
+---
+import { ENG } from '../data';
+---
+<section class="wrap deep why" aria-labelledby="h-why">
+  <h2 class="h" id="h-why">Pourquoi <span class="i">FV Peinture ?</span></h2>
+  <div class="eng">{ENG.map(([a, b], i) => <div><span class="h num" aria-hidden="true">0{i + 1}</span><h3>{a}</h3><p>{b}</p></div>)}</div>
+</section>
