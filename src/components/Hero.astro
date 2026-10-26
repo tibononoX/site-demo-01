@@ -1,0 +1,29 @@
+---
+import { getImage } from 'astro:assets';
+import heroD from '../assets/img/hero-desktop.jpg';
+import heroM from '../assets/img/hero-mobile.jpg';
+import Stroke from './Stroke.astro';
+import { u, TEL, TEL_TXT } from '../lib';
+const d = await getImage({ src: heroD, width: 1480, format: 'webp', quality: 70 });
+const d1 = await getImage({ src: heroD, width: 740, format: 'webp', quality: 70 });
+const m = await getImage({ src: heroM, width: 780, format: 'webp', quality: 65 });
+const m1 = await getImage({ src: heroM, width: 390, format: 'webp', quality: 65 });
+---
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-img">
+    <picture>
+      <source media="(min-width:1024px)" srcset={`${d1.src} 740w, ${d.src} 1480w`} sizes="740px">
+      <img class="ph" src={m1.src} srcset={`${m1.src} 390w, ${m.src} 780w`} sizes="100vw" alt="Peintre au travail sur un échafaudage (photo d’ambiance)" width="390" height="440" fetchpriority="high">
+    </picture>
+    <Stroke class="pst p1" /><Stroke class="pst p2" variant="small" />
+    <span class="credit">Photo d’ambiance — Unsplash / Ernys · pas un chantier FV</span>
+  </div>
+  <div class="hero-txt">
+    <span class="ey" style="color:var(--g)">Peinture · Plâtre · Façades — Genève</span>
+    <h1 class="h" id="h1"><span>Peintre &amp;</span><span class="i">rénovation</span><span>à Genève.</span></h1>
+    <p>Le savoir-faire en couleur — peinture, plâtre, cloisons, sols, façades. Un seul interlocuteur, du devis à la fin du chantier.</p>
+    <div class="ctas"><a class="btn btn-g" href={u('devis/')}>Devis gratuit →</a><a class="btn btn-o" href={TEL}>{TEL_TXT}</a></div>
+    <div class="row small">Gratuité du devis <span class="tag">À CONFIRMER</span></div>
+  </div>
+</section>
+<div class="trust"><span class="note"><span aria-hidden="true">★★★★★</span> <b>5,0</b> sur Google</span><span class="pt">Genève &amp; arc lémanique</span><span class="pt">Un seul interlocuteur</span><span class="pt">Collaborateurs diplômés en Suisse</span><span class="pt">Matériaux suisses</span></div>

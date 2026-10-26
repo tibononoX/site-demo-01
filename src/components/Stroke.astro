@@ -1,0 +1,8 @@
+---
+// Dry-brush stroke (CC0 texture, variant B) — decorative only.
+import big from '../assets/img/b-hero.webp';
+import small from '../assets/img/b-small.webp';
+const { variant = 'big', class: cls = '' } = Astro.props;
+const img = variant === 'small' ? small : big;
+---
+<img class={cls} src={img.src} width={img.width} height={img.height} alt="" aria-hidden="true" loading="lazy" decoding="async">
