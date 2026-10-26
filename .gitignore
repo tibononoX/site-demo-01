@@ -3,3 +3,4 @@ dist/
 .astro/
 qa/*.png
 audit/
+qa/lh/
