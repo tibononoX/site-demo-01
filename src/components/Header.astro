@@ -1,0 +1,20 @@
+---
+import logo from '../assets/img/logo-trait.svg';
+import { u, TEL, TEL_TXT } from '../lib';
+const { current } = Astro.props;
+const nav = [['prestations/','Prestations'],['realisations/','Réalisations'],['entreprise/','Entreprise'],['contact/','Contact']];
+---
+<header class="hd">
+  <a class="logo" href={u('')} aria-label="FV Peinture — accueil"><img src={logo.src} alt="FV Peinture" width="440" height="130"></a>
+  <nav class="nav" aria-label="Navigation principale">
+    {nav.map(([h,t]) => <a href={u(h)} aria-current={current===h ? 'page' : undefined}>{t}</a>)}
+    <a class="tel" href={TEL}>{TEL_TXT}</a>
+    <a class="btn btn-g" href={u('devis/')}>Devis gratuit</a>
+  </nav>
+  <div class="row" style="gap:8px">
+    <a class="btn btn-g" href={u('devis/')}>Devis</a>
+    <details class="mnav"><summary class="burger" aria-label="Ouvrir le menu">☰</summary>
+      <nav aria-label="Menu mobile">{nav.map(([h,t]) => <a href={u(h)}>{t}</a>)}</nav>
+    </details>
+  </div>
+</header>

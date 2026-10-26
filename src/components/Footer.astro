@@ -1,0 +1,14 @@
+---
+import logo from '../assets/img/logo-trait.svg';
+import { u } from '../lib';
+const y = new Date().getFullYear();
+---
+<footer>
+  <div><img src={logo.src} alt="FV Peinture" width="440" height="130" style="height:72px;width:auto;margin-bottom:6px"><p class="i">Le savoir-faire en couleur</p><p class="m">Franck Viollier, Directeur</p></div>
+  <div>
+    <nav aria-label="Pied de page"><a href={u('prestations/')}>Prestations</a><a href={u('realisations/')}>Réalisations</a><a href={u('entreprise/')}>Entreprise</a><a href={u('contact/')}>Contact</a></nav>
+    <nav class="fl" aria-label="Informations légales"><a href={u('mentions-legales/')}>Mentions légales</a><a href={u('confidentialite/')}>Confidentialité</a></nav>
+    <p><a href="https://www.facebook.com/fvpeinture/" rel="noopener" style="color:var(--g);font-weight:600">Facebook</a></p>
+  </div>
+  <p class="m" style="grid-column:1/-1;border-top:1px solid #3A4235;padding-top:20px">© FV Peinture — {y}</p>
+</footer>

@@ -1,0 +1,29 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileBar from '../components/MobileBar.astro';
+import { u } from '../lib';
+interface Props { title: string; description: string; current?: string }
+const { title, description, current } = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="theme-color" content="#161A14">
+<link rel="icon" type="image/svg+xml" href={u('favicon.svg')}>
+<link rel="icon" type="image/png" sizes="32x32" href={u('favicon-32.png')}>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<Header current={current} />
+<main id="contenu"><slot /></main>
+<Footer />
+<MobileBar />
+</body>
+</html>
