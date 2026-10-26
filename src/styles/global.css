@@ -175,3 +175,7 @@ img.pst,img.st{height:auto}
 .c6 small,.c6 strong,.c6 .n{color:#fff}
 .map div{color:var(--ink)}
 .chip.c6 .b small,.chip.c6 .b strong{color:#fff!important}
+/* Google stars: gold */
+:root{--star:#FBBC04}
+.stars{color:var(--star)!important}
+.stars.sm{font-size:18px;letter-spacing:.06em;text-shadow:0 1px 0 #161A1499,0 0 1px #161A14}
