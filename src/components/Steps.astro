@@ -1,0 +1,7 @@
+---
+import { STEPS } from '../data';
+---
+<section class="wrap steps" aria-labelledby="h-steps">
+  <h2 class="h" id="h-steps">En 3 étapes.</h2>
+  <ol class="st3">{STEPS.map(([a, b], i) => <li><span class="dot h" aria-hidden="true">{i + 1}</span><h3>{a}</h3><p>{b}</p></li>)}</ol>
+</section>

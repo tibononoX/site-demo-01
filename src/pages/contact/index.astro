@@ -1,4 +1,14 @@
 ---
-import Placeholder from '../../components/Placeholder.astro';
+import Page from '../../components/Page.astro';
+import { TEL, TEL_TXT, TEL2, TEL2_TXT, ADDR, EMAIL, MAILTO } from '../../lib';
 ---
-<Placeholder title="Contact" h1="Contact" note="Adresse, horaires, zone desservie et carte (chargée au clic) à confirmer." items={["Adresse : Quai Ernest-Ansermet 6 / Grand-Saconnex / Vernier","Horaires : lun–jeu 07:30–18:00, ven 07:30–16:30 ou 18:00"]} />
+<Page title="Contact" h1="Contact" current="contact/" lead="Une entreprise genevoise active en Suisse romande, principalement sur l’arc lémanique.">
+<section class="wrap prose" aria-label="Coordonnées">
+<h2 class="h">FV Peinture</h2>
+<p>{ADDR}</p>
+<p>Direction : Franck Viollier</p>
+<p><a href={TEL}>{TEL_TXT}</a> · <a href={TEL2}>{TEL2_TXT}</a></p>
+<p><a href={MAILTO}>{EMAIL}</a></p>
+<p><a href="https://www.google.com/maps/search/?api=1&amp;query=Quai%20Ernest-Ansermet%206%2C%201205%20Gen%C3%A8ve" rel="noopener">Venir nous trouver</a> · <a href="https://www.facebook.com/fvpeinture/" rel="noopener">Facebook</a></p>
+</section>
+</Page>

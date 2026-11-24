@@ -1,4 +1,14 @@
 ---
-import Placeholder from '../../components/Placeholder.astro';
+import { Image } from 'astro:assets';
+import Page from '../../components/Page.astro';
+import { PROJECTS } from '../../data';
 ---
-<Placeholder title="Réalisations" h1="Réalisations" note="Galerie avant / après : photos de chantiers à fournir par FV Peinture." />
+<Page title="Réalisations" h1="Réalisations" current="realisations/" lead="Rénovation et remise à neuf de tout type de bâtiments : villas, appartements, bureaux, surfaces commerciales, écoles.">
+<section class="wrap projects" aria-label="Projets">
+{PROJECTS.map((p) => (
+  <article class="proj">
+    <div class="proj-tx"><h2 class="h">{p.t}</h2><p class="where">{p.where}</p><p>{p.d}</p><p class="pr"><b>Prestations :</b> {p.p}</p></div>
+    <div class="proj-img">{p.imgs.map((im, i) => <Image src={im} widths={[480, 960]} sizes="(min-width:1024px) 560px, 100vw" alt={`${p.t}, ${p.where} : photo ${i + 1} du chantier FV Peinture`} loading="lazy" format="webp" quality={70} />)}</div>
+  </article>))}
+</section>
+</Page>

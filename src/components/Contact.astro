@@ -1,9 +1,9 @@
 ---
-import { u, TEL, TEL_TXT } from '../lib';
+import { u, TEL, TEL_TXT, TEL2, TEL2_TXT, ADDR, EMAIL, MAILTO } from '../lib';
 import StrokeMask from './StrokeMask.astro';
 ---
-<section class="wrap deep ct" id="contact" aria-labelledby="h-ct"><div><h2 class="ey" id="h-ct" style="color:var(--g);margin:0">Appelez Franck Viollier, Directeur</h2><a class="h phone" href={TEL}>{TEL_TXT}</a>
-<p class="s">Genève et arc lémanique — communes desservies <span class="tag">À CONFIRMER</span></p><p>Lun–jeu 07:30–18:00 · ven 07:30–16:30 ou 18:00 <span class="tag">À CONFIRMER</span></p><p>Quai Ernest-Ansermet 6 / Grand-Saconnex / Vernier <span class="tag">À CONFIRMER</span></p></div>
-<div class="map"><div>PLACEHOLDER — carte chargée au clic</div><small>Carte — chargée au clic (vie privée)</small></div></section>
+<section class="wrap deep ct" id="contact" aria-labelledby="h-ct"><div><h2 class="ey" id="h-ct" style="color:var(--pale);margin:0">Appelez Franck Viollier, Directeur</h2><a class="h phone" href={TEL}>{TEL_TXT}</a>
+<p class="s">Genève, arc lémanique et Suisse romande</p><p>{ADDR}</p></div>
+<div class="map"><p class="ey" style="color:var(--dg)">Contact</p><p><a href={TEL}>{TEL_TXT}</a><br><a href={TEL2}>{TEL2_TXT}</a><br><a href={MAILTO}>{EMAIL}</a></p><p>{ADDR}</p><p><a href="https://www.google.com/maps/search/?api=1&amp;query=Quai%20Ernest-Ansermet%206%2C%201205%20Gen%C3%A8ve" rel="noopener">Venir nous trouver <span class="ar" aria-hidden="true">→</span></a></p></div></section>
 <section class="wrap green cta" id="devis" aria-label="Demande de devis"><StrokeMask /><p class="h" style="margin:0">Parlez-nous</p><p class="h i" style="margin:0">de votre projet.</p>
-<div class="row"><a class="btn btn-ink" href={u('devis/')}>Devis gratuit <span class="ar" aria-hidden="true"><span class="ar" aria-hidden="true">→</span></span></a><a class="btn btn-o" href={TEL}>{TEL_TXT}</a><span class="tag dark">GRATUITÉ À CONFIRMER</span></div></section>
+<div class="row"><a class="btn btn-ink" href={u('devis/')}>Demander un devis <span class="ar" aria-hidden="true">→</span></a><a class="btn btn-o" href={TEL}>{TEL_TXT}</a></div></section>

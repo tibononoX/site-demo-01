@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { u, TEL, TEL_TXT } from '../lib';
+const { title, h1, lead, description, crumbs = [], current } = Astro.props;
+---
+<Base title={`${title} — FV Peinture`} description={description ?? lead ?? h1} current={current}>
+<section class="wrap dark intro" aria-labelledby="h1">
+  <nav aria-label="Fil d’Ariane" class="small" style="font-size:14px"><a href={u('')}>Accueil</a>{crumbs.map(([h, t]) => <> / <a href={u(h)}>{t}</a></>)} / {h1}</nav>
+  <div class="ph-page"><h1 class="h" id="h1">{h1}</h1>
+  {lead && <p class="pl">{lead}</p>}
+  <div class="row" style="margin-top:16px"><a class="btn btn-g" href={TEL}>{'Appeler\u00a0le\u00a0'}{TEL_TXT}</a><a class="btn btn-o" href={u('devis/')}>Demander un devis</a></div></div>
+</section>
+<slot />
+</Base>

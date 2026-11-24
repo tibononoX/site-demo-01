@@ -1,4 +1,11 @@
 ---
-import Placeholder from '../../components/Placeholder.astro';
+import Page from '../../components/Page.astro';
+import { ADDR, EMAIL, MAILTO } from '../../lib';
 ---
-<Placeholder title="Confidentialité" h1="Politique de confidentialité" note="Squelette conforme nLPD à rédiger et valider." items={["Responsable du traitement","Données collectées (formulaire, téléphone)","Finalités et durée de conservation","Carte et contenus tiers chargés au clic","Droits des personnes et contact"]} />
+<Page title="Confidentialité" h1="Confidentialité">
+<section class="wrap prose" aria-label="Données">
+<p>Ce site ne comporte ni formulaire, ni cookies, ni outil de mesure d’audience. Les polices sont hébergées sur le site lui-même.</p>
+<p>Les liens « Venir nous trouver » et « Facebook » ouvrent des services tiers, soumis à leurs propres règles de confidentialité.</p>
+<p>Pour toute question : FV Peinture, {ADDR}, <a href={MAILTO}>{EMAIL}</a>.</p>
+</section>
+</Page>

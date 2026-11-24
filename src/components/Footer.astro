@@ -1,10 +1,10 @@
 ---
 import logo from '../assets/img/logo-trait.svg';
-import { u } from '../lib';
+import { u, TEL, TEL_TXT, TEL2, TEL2_TXT, ADDR, EMAIL, MAILTO } from '../lib';
 const y = new Date().getFullYear();
 ---
 <footer>
-  <div><img src={logo.src} alt="FV Peinture" width="440" height="130" style="height:72px;width:auto;margin-bottom:6px"><p class="i">Le savoir-faire en couleur</p><p class="m">Franck Viollier, Directeur</p></div>
+  <div><img src={logo.src} alt="FV Peinture" width="440" height="130" style="height:72px;width:auto;margin-bottom:6px"><p class="i">Le savoir-faire en couleur</p><p class="m">Direction : Franck Viollier</p><p class="m">{ADDR}</p><p class="m"><a href={TEL}>{TEL_TXT}</a> · <a href={TEL2}>{TEL2_TXT}</a> · <a href={MAILTO}>{EMAIL}</a></p></div>
   <div>
     <nav aria-label="Pied de page"><a href={u('prestations/')}>Prestations</a><a href={u('realisations/')}>Réalisations</a><a href={u('entreprise/')}>Entreprise</a><a href={u('contact/')}>Contact</a></nav>
     <nav class="fl" aria-label="Informations légales"><a href={u('mentions-legales/')}>Mentions légales</a><a href={u('confidentialite/')}>Confidentialité</a></nav>

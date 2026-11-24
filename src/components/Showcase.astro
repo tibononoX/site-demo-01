@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import { PROJECTS } from '../data';
+import { u } from '../lib';
+const [a, b] = PROJECTS;
+---
+<section class="wrap show" id="realisations" aria-labelledby="h-show">
+  <div class="show-top"><h2 class="h" id="h-show">Nos <span class="it">réalisations.</span></h2><p>Rénovation et remise à neuf de tout type de bâtiments : villas, appartements, bureaux, surfaces commerciales, écoles.</p></div>
+  <div class="show-grid">
+    <figure class="sh big"><Image src={a.imgs[0]} widths={[480, 960]} sizes="(min-width:1024px) 820px, 100vw" alt={`${a.t} à ${a.where} : façade de magasin rénovée par FV Peinture`} loading="lazy" format="webp" quality={70} /><figcaption><b>{a.t} · {a.where}</b><span>{a.d}</span></figcaption></figure>
+    <figure class="sh"><Image src={b.imgs[0]} widths={[480, 960]} sizes="(min-width:1024px) 420px, 100vw" alt={`${b.t} à ${b.where} : séjour rénové par FV Peinture`} loading="lazy" format="webp" quality={70} /><figcaption><b>{b.t} · {b.where}</b><span>{b.p}</span></figcaption></figure>
+    <figure class="sh"><Image src={b.imgs[1]} widths={[480, 960]} sizes="(min-width:1024px) 420px, 100vw" alt={`${b.t} à ${b.where} : pièce rénovée, murs et sols`} loading="lazy" format="webp" quality={70} /><figcaption><b>{b.t} · {b.where}</b><span>Murs, plafonds et sols</span></figcaption></figure>
+  </div>
+  <a class="more" href={u('realisations/')}>Toutes les réalisations <span class="ar" aria-hidden="true">→</span></a>
+</section>

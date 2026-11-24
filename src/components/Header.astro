@@ -9,7 +9,7 @@ const nav = [['prestations/','Prestations'],['realisations/','Réalisations'],['
   <nav class="nav" aria-label="Navigation principale">
     {nav.map(([h,t]) => <a href={u(h)} aria-current={current===h ? 'page' : undefined}>{t}</a>)}
     <a class="tel" href={TEL}>{TEL_TXT}</a>
-    <a class="btn btn-g" href={u('devis/')}>Devis gratuit</a>
+    <a class="btn btn-g" href={u('devis/')}>Demander un devis</a>
   </nav>
   <div class="row" style="gap:8px">
     <a class="btn btn-g" href={u('devis/')}>Devis</a>
