@@ -2,3 +2,15 @@
 import { u, TEL } from '../lib';
 ---
 <nav class="bar" aria-label="Actions rapides"><a class="btn btn-o" href={TEL}>Appeler</a><a class="btn btn-g" href={u('devis/')}>Devis</a></nav>
+<script>
+  // Mobile: the fixed bar steps aside while the page's own top buttons are on screen, so it never covers them.
+  const bar = document.querySelector<HTMLElement>('.bar');
+  const top = document.querySelector('.hero .ctas, .intro .row');
+  if (bar && top && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      const hide = e.isIntersecting;
+      bar.classList.toggle('hide', hide);
+      bar.toggleAttribute('inert', hide);
+    }).observe(top);
+  }
+</script>

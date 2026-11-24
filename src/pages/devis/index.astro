@@ -2,11 +2,10 @@
 import Page from '../../components/Page.astro';
 import { TEL, TEL_TXT, TEL2, TEL2_TXT, EMAIL, MAILTO } from '../../lib';
 ---
-<Page title="Demander un devis" h1="Demander un devis" lead="Décrivez-nous votre projet par téléphone ou par e-mail : Franck Viollier, directeur, vous répond.">
+<Page devis title="Demander un devis" h1="Demander un devis" lead="Décrivez-nous votre projet par téléphone ou par e-mail : Franck Viollier, directeur, vous répond.">
 <section class="wrap prose" aria-label="Téléphones">
 <p class="big-tel"><a class="h" href={TEL}>{TEL_TXT}</a></p>
 <p>Autre numéro : <a href={TEL2}>{TEL2_TXT}</a></p>
 <p>E-mail : <a href={`${MAILTO}?subject=${encodeURIComponent('Demande de devis')}`}>{EMAIL}</a></p>
-<div class="row" style="margin-top:20px"><a class="btn btn-ink" href={`${MAILTO}?subject=${encodeURIComponent('Demande de devis')}`}>Écrire un e-mail</a></div>
 </section>
 </Page>

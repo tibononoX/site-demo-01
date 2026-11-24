@@ -1,10 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import Page from '../../components/Page.astro';
+import Stroke from '../../components/Stroke.astro';
 import { TRADES } from '../../data';
 export function getStaticPaths() { return TRADES.map((t) => ({ params: { slug: t.slug }, props: { t } })); }
 const { t } = Astro.props;
 ---
 <Page title={t.t} h1={t.t} crumbs={[['prestations/', 'Prestations']]} lead={t.d} current="prestations/">
 {t.img && <section class="wrap prose" aria-label="Réalisation"><figure class="sh"><Image src={t.img} widths={[480, 960]} sizes="(min-width:1024px) 820px, 100vw" alt={`${t.t} : réalisation FV Peinture, ${t.cap}`} loading="lazy" format="webp" quality={70} /><figcaption><b>{t.cap}</b></figcaption></figure></section>}
+{!t.img && <section class="wrap band" aria-label="Applications"><Stroke class="st" sizes="(min-width:1024px) 1100px, 140vw" /><ul>{(t.uses ?? []).map((x) => <li>{x}</li>)}</ul></section>}
 </Page>

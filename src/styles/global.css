@@ -234,3 +234,13 @@ img.pst,img.st{height:auto}
 @media (min-width:1024px) and (max-width:1279px){.nav{gap:22px}.hd .nav .btn{padding:8px 14px}}
 @media (min-width:1024px){.ct{grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:56px}.phone{font-size:clamp(50px,6.4vw,110px);white-space:nowrap}}
 .ct{overflow-x:clip}@media (max-width:1023px){.map{max-width:calc(100% - 10px)}.phone{font-size:clamp(44px,13vw,110px)}}
+/* v3.1: mobile bar never covers content */
+@media (max-width:1023px){html{scroll-padding-bottom:92px}:where(a,button,input,summary):focus{scroll-margin-bottom:92px}}
+.bar.hide{visibility:hidden;transition:visibility 0s .4s}
+@media (prefers-reduced-motion:reduce){.bar.hide{transition:none}}
+/* neutral paint band for trades without an FV photo (CC0 stroke) */
+.band{position:relative;overflow:hidden;min-height:260px;display:grid;align-content:center}
+.band .st{position:absolute;width:min(1100px,140%);left:-10%;top:50%;translate:0 -50%;rotate:-4deg;pointer-events:none}
+.band ul{position:relative;z-index:1;list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.band li{background:var(--ink);color:var(--w);font-weight:600;padding:10px 18px;border-radius:999px}
+@media (min-width:1024px){.band{min-height:340px}}

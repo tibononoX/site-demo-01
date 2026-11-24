@@ -28,7 +28,7 @@ export const TRADES = [
   { t: 'Peinture extérieure & façades', slug: 'peinture-exterieure-facades', d: 'Tous travaux de peinture extérieurs : avant-toits, dispersion sur façades, crépi, ciment, béton, chaux, portes, fenêtres, volets, fer forgé, portails, barrières, garages, corniches, traçage de route. Isolation périphérique en façade avec crépi de finition, exécution avec divers types d’isolation.', c: 'c2', img: arcade9, cap: 'Arcade professionnelle, Genève' },
   { t: 'Plâtrerie & cloisons', slug: 'platrerie-cloisons', d: 'Enduisage divers, plafonds, murs intérieurs et extérieurs. Cloisons légères en placo-plâtre avec châssis métallique, cloisons en carreaux de plâtre.', c: 'c3', img: app1, cap: 'Appartement 3,5 pièces, Genève' },
   { t: 'Sols résine & carrelage', slug: 'sols-resine-carrelage', d: 'Peinture de sol en résine à deux composants polyuréthane / époxyde, et carrelage.', c: 'c5', img: app2, cap: 'Appartement 3,5 pièces, Genève' },
-  { t: 'Film solaire UV', slug: 'film-solaire-uv', d: 'Pose de film solaire UV pour vos fenêtres, véranda, pergola ou abri de piscine.', c: 'c6' },
+  { t: 'Film solaire UV', slug: 'film-solaire-uv', d: 'Pose de film solaire UV pour vos fenêtres, véranda, pergola ou abri de piscine.', c: 'c6', uses: ['Fenêtres', 'Véranda', 'Pergola', 'Abri de piscine'] },
 ];
 export const STEPS = [
   ['Devis', 'Vous nous présentez votre projet, nous établissons votre devis.'],
